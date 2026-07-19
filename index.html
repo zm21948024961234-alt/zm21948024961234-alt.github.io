@@ -36,9 +36,48 @@
       <h1 class="app-title" id="pageTitle">AI彩票分析系统</h1>
     </header>
 
-    <!-- 页面内容容器 -->
+    <!-- 页面内容容器（含静态默认内容，让不执行JS的爬虫/AI也能看到完整网站） -->
     <main class="app-main" id="pageContainer">
-      <!-- 由 JS 动态渲染 -->
+      <!-- 首页静态内容（JS执行后会根据路由替换） -->
+      <div class="home-static" style="padding:20px;max-width:600px;margin:0 auto;">
+        <h2 style="margin:10px 0 20px 0;color:#4f46e5;">AI彩票分析系统</h2>
+        <p style="color:#6b7280;margin-bottom:20px;">历史数据 · 自动采集 · 智能分析</p>
+
+        <h3>彩种</h3>
+        <ul>
+          <li><strong>大乐透（DLT）</strong> - 前区5个号码(1-35) + 后区2个号码(1-12)，体彩周一三六开奖</li>
+          <li><strong>双色球（SSQ）</strong> - 红球6个(1-33) + 蓝球1个(1-16)，福彩二四日开奖</li>
+          <li><strong>排列3（P3）</strong> - 百位/十位/个位(0-9)，体彩每日开奖</li>
+          <li><strong>排列5（P5）</strong> - 五位号码(0-9)，体彩每日开奖</li>
+        </ul>
+
+        <h3>功能模块</h3>
+        <ul>
+          <li><strong>数据采集</strong> - 自动获取最新开奖数据，调用官方接口（体彩 sporttery + 福彩 cwl），支持一键采集与手动更新</li>
+          <li><strong>历史数据库</strong> - 本地存储(IndexedDB)，按期号去重，支持Excel导入导出</li>
+          <li><strong>AI分析</strong> - 号码冷热分析、遗漏分析、奇偶分析、大小分析、历史趋势、组合筛选（仅做数据分析，不预测中奖）</li>
+        </ul>
+
+        <h3>数据接口（供AI/程序读取）</h3>
+        <ul>
+          <li><a href="/api/test.json">/api/test.json</a> - 接口连通性测试</li>
+          <li><a href="/api/status.json">/api/status.json</a> - 系统状态与各彩种数据统计</li>
+          <li><a href="/api/info.json">/api/info.json</a> - 系统完整信息（功能、彩种规则、字段说明）</li>
+          <li><a href="/data/sample.json">/data/sample.json</a> - 各彩种示例开奖数据</li>
+        </ul>
+
+        <h3>数据字段</h3>
+        <ul>
+          <li><strong>排列3</strong>：期号、开奖日期、百位、十位、个位</li>
+          <li><strong>排列5</strong>：期号、日期、五位号码(w1-w5)</li>
+          <li><strong>大乐透</strong>：期号、日期、前区5个号码(front)、后区2个号码(back)</li>
+          <li><strong>双色球</strong>：期号、日期、红球6个(red)、蓝球1个(blue)</li>
+        </ul>
+
+        <p style="margin-top:20px;padding:12px;background:#fef3c7;border-radius:8px;color:#92400e;font-size:14px;">
+          ⚠️ <strong>免责声明</strong>：本系统仅提供历史数据分析功能，不承诺中奖、不售彩票，请理性购彩。
+        </p>
+      </div>
     </main>
 
     <!-- 底部提示 -->
