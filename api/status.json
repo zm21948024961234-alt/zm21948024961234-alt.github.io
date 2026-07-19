@@ -1,0 +1,55 @@
+{
+  "status": "ok",
+  "service": "AI彩票分析系统",
+  "description": "大乐透/双色球/排列3/排列5 历史开奖数据管理与自动采集工具",
+  "url": "https://zm21948024961234-alt.github.io/",
+  "version": "1.0.0",
+  "last_updated": "2026-07-19",
+  "lotteries": {
+    "p3": {
+      "name": "排列3",
+      "type": "体彩",
+      "draw_schedule": "每日开奖",
+      "rule": "百位/十位/个位，每位0-9",
+      "fields": ["期号", "开奖日期", "百位", "十位", "个位"],
+      "data_source": "体彩官方接口 sporttery.cn"
+    },
+    "p5": {
+      "name": "排列5",
+      "type": "体彩",
+      "draw_schedule": "每日开奖",
+      "rule": "五位号码，每位0-9",
+      "fields": ["期号", "开奖日期", "w1", "w2", "w3", "w4", "w5"],
+      "data_source": "体彩官方接口 sporttery.cn"
+    },
+    "dlt": {
+      "name": "大乐透",
+      "type": "体彩",
+      "draw_schedule": "周一三六开奖",
+      "rule": "前区5个号码(1-35) + 后区2个号码(1-12)",
+      "fields": ["期号", "开奖日期", "front[5]", "back[2]"],
+      "data_source": "体彩官方接口 sporttery.cn"
+    },
+    "ssq": {
+      "name": "双色球",
+      "type": "福彩",
+      "draw_schedule": "二四日开奖",
+      "rule": "红球6个(1-33) + 蓝球1个(1-16)",
+      "fields": ["期号", "开奖日期", "red[6]", "blue[1]"],
+      "data_source": "福彩官方接口 cwl.gov.cn"
+    }
+  },
+  "features": {
+    "data_collection": "自动采集官方开奖数据，支持一键采集与手动更新",
+    "database": "IndexedDB本地存储，按期号去重，支持分页查询",
+    "excel": "支持Excel导入导出(.xlsx)，可批量备份",
+    "ai_analysis": "预留号码冷热/遗漏/奇偶/大小/趋势/组合筛选分析（待开发）"
+  },
+  "data_endpoints": {
+    "test": "/api/test.json",
+    "status": "/api/status.json",
+    "info": "/api/info.json",
+    "sample_data": "/data/sample.json"
+  },
+  "disclaimer": "本系统仅提供历史数据分析功能，不承诺中奖、不售彩票，请理性购彩"
+}
