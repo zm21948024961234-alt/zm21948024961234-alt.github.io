@@ -1,0 +1,26 @@
+# 允许所有爬虫访问（包括 ChatGPT、Google、Bing、百度等）
+User-agent: *
+Allow: /
+
+# 明确允许 OpenAI 的爬虫
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# 允许主流搜索引擎
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Sitemap
+Sitemap: https://zm21948024961234-alt.github.io/sitemap.xml
