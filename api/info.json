@@ -1,0 +1,130 @@
+{
+  "service": "AI彩票分析系统",
+  "version": "1.0.0",
+  "description": "大乐透/双色球/排列3/排列5 历史开奖数据管理与自动采集工具。提供数据采集、本地存储、Excel导入导出、数据分析功能。仅做历史数据分析，不预测中奖。",
+  "url": "https://zm21948024961234-alt.github.io/",
+  "lotteries": {
+    "dlt": {
+      "name": "大乐透",
+      "fullname": "中国体育彩票超级大乐透",
+      "type": "体彩",
+      "draw_schedule": "每周一、三、六开奖",
+      "rule": {
+        "front_area": "前区从1-35中选5个号码",
+        "back_area": "后区从1-12中选2个号码",
+        "prize": "一等奖需前区5个+后区2个全部命中"
+      },
+      "data_fields": {
+        "issue": "期号（如20260719）",
+        "date": "开奖日期（YYYY-MM-DD）",
+        "front": "前区5个号码数组，如[1,5,12,23,30]",
+        "back": "后区2个号码数组，如[3,8]"
+      },
+      "example": {
+        "issue": "20260719",
+        "date": "2026-07-18",
+        "front": [1, 5, 12, 23, 30],
+        "back": [3, 8]
+      }
+    },
+    "ssq": {
+      "name": "双色球",
+      "fullname": "中国福利彩票双色球",
+      "type": "福彩",
+      "draw_schedule": "每周二、四、日开奖",
+      "rule": {
+        "red_balls": "红球从1-33中选6个号码",
+        "blue_ball": "蓝球从1-16中选1个号码",
+        "prize": "一等奖需红球6个+蓝球1个全部命中"
+      },
+      "data_fields": {
+        "issue": "期号",
+        "date": "开奖日期",
+        "red": "红球6个号码数组，如[1,8,15,22,28,33]",
+        "blue": "蓝球1个号码，如7"
+      },
+      "example": {
+        "issue": "20260719",
+        "date": "2026-07-18",
+        "red": [1, 8, 15, 22, 28, 33],
+        "blue": 7
+      }
+    },
+    "p3": {
+      "name": "排列3",
+      "fullname": "中国体育彩票排列3",
+      "type": "体彩",
+      "draw_schedule": "每日开奖",
+      "rule": {
+        "description": "3位数字号码，每位0-9",
+        "positions": ["百位", "十位", "个位"]
+      },
+      "data_fields": {
+        "issue": "期号",
+        "date": "开奖日期",
+        "bai": "百位数字(0-9)",
+        "shi": "十位数字(0-9)",
+        "ge": "个位数字(0-9)"
+      },
+      "example": {
+        "issue": "20260719",
+        "date": "2026-07-19",
+        "bai": 3,
+        "shi": 8,
+        "ge": 5
+      }
+    },
+    "p5": {
+      "name": "排列5",
+      "fullname": "中国体育彩票排列5",
+      "type": "体彩",
+      "draw_schedule": "每日开奖",
+      "rule": {
+        "description": "5位数字号码，每位0-9"
+      },
+      "data_fields": {
+        "issue": "期号",
+        "date": "开奖日期",
+        "w1": "第一位(0-9)",
+        "w2": "第二位(0-9)",
+        "w3": "第三位(0-9)",
+        "w4": "第四位(0-9)",
+        "w5": "第五位(0-9)"
+      },
+      "example": {
+        "issue": "20260719",
+        "date": "2026-07-19",
+        "w1": 3,
+        "w2": 8,
+        "w3": 5,
+        "w4": 2,
+        "w5": 7
+      }
+    }
+  },
+  "features": {
+    "data_collection": {
+      "description": "自动采集官方开奖数据",
+      "sources": {
+        "sporttery": "体彩官方接口 webapi.sporttery.cn（排列3/排列5/大乐透）",
+        "cwl": "福彩官方接口 cwl.gov.cn（双色球）"
+      },
+      "modes": ["一键采集全部", "单个彩种采集", "手动录入"]
+    },
+    "database": {
+      "description": "IndexedDB浏览器本地存储",
+      "features": ["按期号去重", "分页查询", "编辑/删除"]
+    },
+    "excel": {
+      "description": "Excel导入导出",
+      "format": ".xlsx",
+      "operations": ["单彩种导出", "单彩种导入", "全部导出备份"]
+    },
+    "ai_analysis": {
+      "description": "AI分析模块（待开发，已预留入口）",
+      "planned_features": ["号码冷热分析", "遗漏分析", "奇偶分析", "大小分析", "历史趋势", "组合筛选"]
+    }
+  },
+  "disclaimer": "本系统仅提供历史数据分析功能，不承诺中奖、不售彩票，请理性购彩。",
+  "contact": "964087988@qq.com"
+}
