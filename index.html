@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#4f46e5">
+  <title>AI彩票分析系统 - 大乐透/双色球/排列3/排列5历史数据与自动采集</title>
+  <meta name="description" content="AI彩票分析系统：提供大乐透、双色球、排列3、排列5的历史开奖数据管理、自动采集、Excel导入导出与数据分析功能。仅做历史数据分析，不预测中奖。">
+  <meta name="keywords" content="彩票,大乐透,双色球,排列3,排列5,历史数据,开奖数据,自动采集,数据分析">
+  <meta name="author" content="AI彩票分析系统">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph 标签（让 ChatGPT/社交平台能识别网站内容） -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI彩票分析系统">
+  <meta property="og:description" content="大乐透/双色球/排列3/排列5 历史数据采集与分析工具">
+  <meta property="og:url" content="https://zm21948024961234-alt.github.io/">
+  <meta property="og:site_name" content="AI彩票分析系统">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI彩票分析系统">
+  <meta name="twitter:description" content="大乐透/双色球/排列3/排列5 历史数据采集与分析工具">
+
+  <link rel="canonical" href="https://zm21948024961234-alt.github.io/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- 顶部标题栏 -->
+    <header class="app-header">
+      <button class="back-btn" id="backBtn" aria-label="返回"></button>
+      <h1 class="app-title" id="pageTitle">AI彩票分析系统</h1>
+    </header>
+
+    <!-- 页面内容容器 -->
+    <main class="app-main" id="pageContainer">
+      <!-- 由 JS 动态渲染 -->
+    </main>
+
+    <!-- 底部提示 -->
+    <footer class="app-footer">
+      <span id="syncStatus">数据本地存储</span>
+    </footer>
+  </div>
+
+  <!-- 静态内容：让搜索引擎和 AI 爬虫（不执行 JS）也能看到网站内容 -->
+  <noscript>
+    <div style="padding:20px;max-width:600px;margin:0 auto;font-family:sans-serif;">
+      <h1>AI彩票分析系统</h1>
+      <p>大乐透、双色球、排列3、排列5 历史开奖数据管理与自动采集工具。</p>
+      <h2>功能模块</h2>
+      <ul>
+        <li><strong>大乐透</strong> - 前区5个号码(1-35) + 后区2个号码(1-12)，体彩周一三六开奖</li>
+        <li><strong>双色球</strong> - 红球6个(1-33) + 蓝球1个(1-16)，福彩二四日开奖</li>
+        <li><strong>排列3</strong> - 百位/十位/个位(0-9)，体彩每日开奖</li>
+        <li><strong>排列5</strong> - 五位号码(0-9)，体彩每日开奖</li>
+        <li><strong>数据采集</strong> - 自动获取最新开奖数据，支持一键采集与手动更新</li>
+        <li><strong>历史数据库</strong> - 本地存储(IndexedDB)，支持Excel导入导出</li>
+        <li><strong>AI分析</strong> - 号码冷热、遗漏、奇偶、大小、历史趋势分析（仅做数据分析，不预测中奖）</li>
+      </ul>
+      <p>本系统仅提供历史数据分析功能，不承诺中奖，请理性购彩。</p>
+    </div>
+  </noscript>
+
+  <!-- SheetJS 用于 Excel 导入导出 -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <!-- 应用脚本 -->
+  <script src="js/db.js"></script>
+  <script src="js/fetcher.js"></script>
+  <script src="js/excel.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
